@@ -1,0 +1,23 @@
+.container__area {
+    @apply px-4 py-2;
+}
+
+.btn-icon {
+    @apply w-10 h-10 hover:bg-base-100 hover:border-base-100;
+}
+
+.input-sm {
+    @apply !h-10;
+}
+
+.conversation-item {
+    @apply duration-300 cursor-pointer hover:bg-opacity-50 px-4 py-3 hover:bg-base-200;
+}
+
+.conversation-item.active {
+    @apply bg-opacity-50 hover:bg-opacity-50 bg-base-200;
+}
+
+/* .conversation-item.unread {
+    @apply hover:bg-opacity-15 bg-primary bg-opacity-10;
+} */
