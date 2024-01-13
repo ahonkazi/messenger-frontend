@@ -8,7 +8,7 @@ const ChatFooter = () => {
     const [placeHolderStatus, setPlaceholderStatus] = useState(true);
     const handleSubmit = () => {
         event.preventDefault();
-        console.log(formatEmoji(messageFieldRef.current.innerHTML))
+        console.log(formatEmoji(messageFieldRef.current.innerHTML).replace(/<br>$/, ""))
     }
     const handleKeyUp = (event) => {
         if (event.shiftKey && event.key === "Enter") {
@@ -32,6 +32,7 @@ const ChatFooter = () => {
         const wrappedText = text.replace(emojiRegex, '<span class="emoji">$1</span>')
         return wrappedText;
     }
+
     return (
         <form onSubmit={(e) => { e.preventDefault(); handleSubmit() }} className='shrink-0 h-auto  bg-base-200 container__area flex items-center gap-x-4'>
             <div className="left__controll">

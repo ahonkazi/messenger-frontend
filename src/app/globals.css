@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* chat bubble */
+
+.not-end {
+    @apply before:!hidden !rounded-bl-2xl !rounded-br-2xl;
+
+}
