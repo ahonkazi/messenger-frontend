@@ -21,3 +21,11 @@
 /* .conversation-item.unread {
     @apply hover:bg-opacity-15 bg-primary bg-opacity-10;
 } */
+
+.placeholder::before {
+    content: 'Type here...';
+    position: absolute;
+    pointer-events: none;
+    font-size: 14px;
+
+}
