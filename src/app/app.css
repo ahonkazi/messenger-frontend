@@ -15,7 +15,7 @@
 }
 
 .conversation-item.active {
-    @apply bg-opacity-50 hover:bg-opacity-50 bg-base-200;
+    @apply bg-opacity-100 hover:bg-opacity-70 bg-base-200;
 }
 
 /* .conversation-item.unread {

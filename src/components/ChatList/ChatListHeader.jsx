@@ -4,7 +4,7 @@ import { HiOutlineDotsVertical } from "react-icons/hi";
 const ChatListHeader = () => {
     return (
         <div className="chatlist-header shrink-0">
-            <div className="user__info container__area bg-base-200 justify-between flex items-center">
+            <div className="user__info h-[60px] container__area bg-base-200 justify-between flex items-center">
                 <div className="profile-avatar  flex items-center justify-center">
                     <div className="avatar">
                         <div className="w-10 rounded-full">
@@ -20,7 +20,8 @@ const ChatListHeader = () => {
             <div className="search__conversation w-full  container__area">
                 <input type="text" placeholder="Type here" className="input bg-base-200  input-sm w-full" />
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default ChatListHeader
