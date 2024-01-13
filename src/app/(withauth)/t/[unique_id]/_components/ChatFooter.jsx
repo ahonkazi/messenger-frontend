@@ -9,38 +9,27 @@ const ChatFooter = () => {
     const chatInputRef = useRef(null);
     const emojiRegex = /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g;
 
-    // useEffect(() => {
     const handleKeyDown = (event) => {
-        if (event.shiftKey && event.key === "Enter") {
+        if (event.key === "Enter" && event.shiftKey) {
             event.preventDefault();
-            setFormatedText((prevText) => prevText + "\n");
+            setInputText((prevText) => prevText + "\n");
+        } else if (event.key === "Enter") {
+            event.preventDefault();
+            setInputText((prevText) => prevText + "<br>");
         }
-
-        // if (event.key === " ") {
-        //     event.preventDefault();
-        //     setFormatedText((prevText) => prevText + " ");
-        // }
     };
-
-    //     chatInputRef.current.addEventListener('keyup', handleKeyDown);
-
-    //     return () => {
-    //         chatInputRef.current.removeEventListener('keyup', handleKeyDown);
-    //     };
-    // }, []);
 
     const handleInputChange = (event) => {
-        const wrappedText = event.target.textContent
-            .replace(emojiRegex, '<span class="emoji">$1</span>')
-            .replace(/\n/g, "<br>");
+        const wrappedTextInput = event.target.textContent;
+        const wrappedText = wrappedTextInput.replace(emojiRegex, '<span class="emoji">$1</span>');
+        setInputText(wrappedTextInput);
         setFormatedText(wrappedText);
-        setInputText(event.target.textContent);
-
     };
-    useEffect(() => {
-        console.log(formatedText)
 
-    }, [formatedText])
+    useEffect(() => {
+        console.log(formatedText);
+    }, [formatedText]);
+
     return (
         <div className='shrink-0 h-auto  bg-base-200 container__area flex items-center gap-x-4'>
             <div className="left__controll">
@@ -58,10 +47,10 @@ const ChatFooter = () => {
                     <div
                         ref={chatInputRef}
                         contentEditable
-                        suppressContentEditableWarning // Address potential browser warning
+                        suppressContentEditableWarning
                         className="w-full h-full bg-transparent border-none outline-none"
-                        onInput={(e) => handleInputChange(e)} // Use onInput for contentEditable
-                        onKeyDown={(e) => handleKeyDown(e)}
+                        onInput={(e) => handleInputChange(e)}
+                        onKeyDown={(e) => handleKeyDown(e)} // Attach to onKeyDown
                     />
                 </div>
             </div>
