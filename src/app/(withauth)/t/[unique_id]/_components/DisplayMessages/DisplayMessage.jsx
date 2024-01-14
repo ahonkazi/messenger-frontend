@@ -7,6 +7,7 @@ export const DisplayMessage = () => {
     const messagesContainerRef = useRef(null);
     useEffect(() => {
         const scrollToBottom = () => {
+            document.getElementById('messageContainer').scrollTop = document.getElementById('messageContainer').scrollHeight
             messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
         };
 
