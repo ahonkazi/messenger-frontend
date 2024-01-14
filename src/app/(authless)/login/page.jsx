@@ -1,9 +1,13 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import logo from '../../../assets/site/logo-icon.png'
 import image from './assets/login-image.svg'
 import LeftPart from './_components/LeftPart'
 import LoginForm from './_components/LoginForm'
+import SignupModal from '../_Signup/SignupModal'
 const LoginPage = () => {
+    const [signupModalStatus, setSignupModalStatus] = useState(true)
+    
     return (
         <div className='flex w-full flex-col lg:flex-row '>
             <LeftPart logo={logo.src} image={image.src} />
@@ -15,6 +19,7 @@ const LoginPage = () => {
                 </div>
                 <LoginForm />
             </div>
+            <SignupModal openStatus={signupModalStatus} setOpenStatus={setSignupModalStatus} />
         </div>
     )
 }

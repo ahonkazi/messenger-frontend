@@ -21,10 +21,6 @@
     @apply bg-opacity-100 hover:bg-opacity-70 bg-base-200;
 }
 
-/* .conversation-item.unread {
-    @apply hover:bg-opacity-15 bg-primary bg-opacity-10;
-} */
-
 .placeholder::before {
     content: 'Type here...';
     position: absolute;
