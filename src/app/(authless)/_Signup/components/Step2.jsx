@@ -5,6 +5,7 @@ const Step2 = ({ nextStep }) => {
         <div className="step-2 px-2">
             <div className="modal__header py-2">
                 <p className='text-3xl'>Varify email</p>
+                <p>We have sent a security key to example@gmail.com</p>
             </div>
             <form className="">
 
@@ -12,7 +13,7 @@ const Step2 = ({ nextStep }) => {
                     <label className="label">
                         <span className="label-text">Security key</span>
                     </label>
-                    <input type="email" placeholder="Email" className="input input-bordered" required />
+                    <input type="text" placeholder="Security key" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-4">
                     <button onClick={() => nextStep()} className="btn btn-primary">Next</button>

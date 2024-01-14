@@ -6,8 +6,8 @@ import LeftPart from './_components/LeftPart'
 import LoginForm from './_components/LoginForm'
 import SignupModal from '../_Signup/SignupModal'
 const LoginPage = () => {
-    const [signupModalStatus, setSignupModalStatus] = useState(true)
-    
+    const [signupModalStatus, setSignupModalStatus] = useState(false)
+
     return (
         <div className='flex w-full flex-col lg:flex-row '>
             <LeftPart logo={logo.src} image={image.src} />
@@ -17,7 +17,7 @@ const LoginPage = () => {
                     <img className='w-[50px]' src={logo.src} alt="" />
 
                 </div>
-                <LoginForm />
+                <LoginForm setModalStatus={setSignupModalStatus} />
             </div>
             <SignupModal openStatus={signupModalStatus} setOpenStatus={setSignupModalStatus} />
         </div>

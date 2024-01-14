@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
-const LoginForm = () => {
+const LoginForm = ({ setModalStatus }) => {
     const router = useRouter()
     const processLogin = () => {
         location.replace('/')
@@ -32,7 +32,7 @@ const LoginForm = () => {
                     <div className="divider">OR</div>
                     <div className="form-control flex items-center gap-x-2 flex-row" >
                         <span className="label-text">Don't have an account?</span>
-                        <button className="label-text link link-hover">Signup</button>
+                        <button type='button' onClick={() => setModalStatus(true)} className="label-text link link-hover">Signup</button>
 
                     </div>
                 </form>

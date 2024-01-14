@@ -7,28 +7,34 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Step2 from './components/Step2';
 import Step3 from './components/Step3';
+import Step4 from './components/Step4';
 const SignupModal = ({ openStatus, setOpenStatus }) => {
-    useEffect(() => {
-        if (typeof document !== 'undefined') {
-            document.addEventListener('keydown', function (event) {
-                if (event.keyCode === 27) {
-                    setOpenStatus(false)
-                    // Esc key was pressed
-                    // Execute your desired response here
-                }
-                if (event.altKey && event.key === 'Enter') {
-                    setOpenStatus(true)
-                }
-            });
-        }
-
-    }, [])
     const [swiper, setSwiper] = useState(null);
 
     const setStep = (index) => {
         if (swiper)
             swiper.slideTo(index)
     };
+
+    useEffect(() => {
+
+        if (typeof document !== 'undefined') {
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode === 27) {
+                    // Esc key was pressed
+                    // Execute your desired response here
+                    setOpenStatus(false)
+
+                }
+                if (event.altKey && event.key === 'Enter') {
+                    setOpenStatus(true)
+
+
+                }
+            });
+        }
+
+    }, [swiper])
 
     return (
         <>
@@ -48,7 +54,8 @@ const SignupModal = ({ openStatus, setOpenStatus }) => {
                         {/* varify email */}
                         <SwiperSlide><Step2 nextStep={() => setStep(2)} /></SwiperSlide>
                         {/* additinal information */}
-                        <SwiperSlide><Step3 nextStep={() => setStep(0)} /></SwiperSlide>
+                        <SwiperSlide><Step3 nextStep={() => setStep(3)} /></SwiperSlide>
+                        <SwiperSlide><Step4 nextStep={() => setStep(0)} /></SwiperSlide>
 
                     </Swiper>
                 </div>
