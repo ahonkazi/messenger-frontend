@@ -7,9 +7,7 @@ const MessagePage = () => {
     return (
         <section data-theme='dark' className='h-screen border-l  flex flex-col border-base-100 bg-base-300 '>
             <ChatHeader />
-            <div className="message-container overflow-y-auto container__area h-full">
-                <DisplayMessage />
-            </div>
+            <DisplayMessage />
             <ChatFooter />
         </section>
     )

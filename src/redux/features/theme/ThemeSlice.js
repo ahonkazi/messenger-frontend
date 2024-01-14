@@ -6,7 +6,13 @@ const initialState = {
         positionY: 150,
         id: 0,
         position: 'bottom'
+    },
+    messageMenu: {
+        status: false,
+        id: 0,
+        showButton: { status: false, id: 0 },
     }
+
 }
 
 
@@ -42,9 +48,38 @@ const themeSlice = createSlice({
 
             }
 
+        },
+        toggleMessageMenu: (state, action) => {
+
+            if (action.payload.id === 0) {
+                state.messageMenu.id = 0;
+                state.messageMenu.status = false;
+                state.messageMenu.showButton.status = false;
+                state.messageMenu.showButton.id = 0;
+
+            } else {
+
+                state.messageMenu.status = true;
+                state.messageMenu.id = action.payload.id;
+
+
+
+            }
+
+
+        },
+        setShow: (state, action) => {
+            if (action.payload.status) {
+                state.messageMenu.showButton.status = action.payload.status;
+                state.messageMenu.showButton.id = action.payload.id;
+            } else {
+                state.messageMenu.showButton.status = false;
+                state.messageMenu.showButton.id = 0;
+            }
         }
+
     }
 })
 
 export default themeSlice.reducer
-export const { toggleConversationMenu } = themeSlice.actions
+export const { toggleConversationMenu, toggleMessageMenu, setShow } = themeSlice.actions
