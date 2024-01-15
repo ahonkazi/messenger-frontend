@@ -1,4 +1,5 @@
 import ChatList from '@/components/ChatList/ChatList'
+import { NewChatSidebar } from '@/components/Sidebar/NewChat/NewChatSidebar'
 import React from 'react'
 
 const ChatWrapper = ({ children }) => {
@@ -6,10 +7,12 @@ const ChatWrapper = ({ children }) => {
         <>
             <div className='flex flex-row'>
                 <ChatList />
-                <div className="w-full bg-slate-200 h-screen">
+                <div className="w-full h-screen">
                     {children}
                 </div>
             </div>
+
+            {/* <NewChatSidebar /> */}
         </>
     )
 }

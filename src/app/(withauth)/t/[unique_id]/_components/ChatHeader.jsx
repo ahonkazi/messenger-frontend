@@ -3,7 +3,7 @@ import { HiOutlineDotsVertical } from 'react-icons/hi'
 
 const ChatHeader = () => {
     return (
-        <div className="chat-header container__area border-b border-base-100 h-[60px]  shrink-0 bg-base-200 flex items-center justify-between w-full">
+        <div className="chat-header container__area border-b border-base-100 h-[60px]  shrink-0 bg-base-100 flex items-center justify-between w-full">
             <div className="user__info gap-x-4 flex items-center">
                 <div className="profile-avatar  flex items-center justify-center">
                     <div className="avatar online before:!w-[20%] before:!h-[20%]">

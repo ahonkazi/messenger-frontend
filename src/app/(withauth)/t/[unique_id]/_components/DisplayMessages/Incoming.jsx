@@ -1,4 +1,5 @@
 "use client"
+import { ForwardMessageModal, IncomingDeleteMessageModal } from '@/components/Modals/Modals';
 import { setShow, toggleMessageMenu } from '@/redux/features/theme/ThemeSlice';
 import React, { useState } from 'react'
 import { HiOutlineDotsVertical } from 'react-icons/hi';
@@ -59,6 +60,7 @@ export const Incoming = ({ id, notEnd = false, hasImage = false, message = '', u
 
 const MessageOptions = ({ open, setOpen, id }) => {
     const [deleteModalStatus, setDeleteModalStatus] = useState(false)
+    const [forwardMessageModalStatus, setForwardMessageModalStatus] = useState(false)
 
     const dispatch = useDispatch()
     const [position, setPosition] = useState('bottom')
@@ -89,18 +91,18 @@ const MessageOptions = ({ open, setOpen, id }) => {
     }
     return (
         <>
-            <div className={`absolute ${theme.messageMenu.showButton.status && theme.messageMenu.showButton.id === id ? 'opacity-100 ' : 'opacity-0'} z-[10] left-full top-[50%] -translate-y-[50%] pl-4`}>
+            <div className={`absolute  ${theme.messageMenu.showButton.status && theme.messageMenu.showButton.id === id ? 'opacity-100 ' : 'opacity-0'} z-[10] left-full top-[50%] -translate-y-[50%] pl-4`}>
                 <div className="relative">
                     <button onClick={(e) => handleClick(e)} className={`btn -z-[10] ${(theme.messageMenu.status === true && theme.messageMenu.id !== id) && 'pointer-events-none'} bg-transparent border-transparent hover:border-base-200 hover:bg-base-200 btn-sm text-xl btn-icon btn-circle`}><HiOutlineDotsVertical /></button>
 
                     {
                         (theme.messageMenu.status && theme.messageMenu.id === id) && (
-                            <div className={`absolute z-[100] ${position === 'top' ? 'bottom-full -translate-y-2' : 'top-full translate-y-2'}  left-[50%] -translate-x-[50%]`}>
+                            <div className={`absolute z-[100] ${position === 'top' ? 'bottom-full -translate-y-4' : 'top-full translate-y-4'}  left-[50%] -translate-x-[50%]`}>
                                 <div className="relative">
                                     <ul className="menu bg-base-200 w-44 rounded-box">
                                         <li><button onClick={() => { handleClickOption() }}>Message info</button></li>
                                         <li><button onClick={() => { setDeleteModalStatus(true); handleClickOption() }}>Remove</button></li>
-                                        <li><button onClick={() => { handleClickOption() }}>Pin</button></li>
+                                        <li><button onClick={() => { setForwardMessageModalStatus(true); handleClickOption() }}>Forward</button></li>
                                         <li><button onClick={() => { handleClickOption() }}>Reply</button></li>
                                     </ul>
                                     <div className={`absolute  ${position === 'top' ? 'bottom-0 translate-y-2' : 'top-0 -translate-y-2'}  -z-10 rotate-45 left-[50%] -translate-x-[50%] w-7 h-7 bg-base-200`}></div>
@@ -112,17 +114,8 @@ const MessageOptions = ({ open, setOpen, id }) => {
                     }</div>
             </div>
 
-            <input type="checkbox" id="deleteMessage" checked={deleteModalStatus} className="modal-toggle" />
-            <div className="modal" role="dialog">
-                <div className="modal-box">
-                    <h3 className="font-medium text-lg">Remove for you?</h3>
-
-                    <div className="modal-action  grid grid-cols-2">
-                        <label htmlFor="deleteMessage" onClick={() => setDeleteModalStatus(false)} className="btn font-medium">Close</label>
-                        <label htmlFor="deleteMessage" onClick={() => setDeleteModalStatus(false)} className="btn btn-primary font-medium  ">Remove</label>
-                    </div>
-                </div>
-            </div>
+            <IncomingDeleteMessageModal setDeleteModalStatus={setDeleteModalStatus} deleteModalStatus={deleteModalStatus} />
+            <ForwardMessageModal forwardMessageModalStatus={forwardMessageModalStatus} setForwardMessageModalStatus={setForwardMessageModalStatus} />
         </>
     )
 }

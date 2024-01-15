@@ -31,7 +31,7 @@ const ConversationItemMenu = ({ opened, position = 'bottom', y = 150 }) => {
       {
         opened && (
           <motion.div style={styles} initial={{ height: 0, width: 0 }} animate={{ height: 'auto', width: 'auto' }} exit={{ height: 0, width: 0 }} className="fixed  left-[385px] z-[100]">
-            <div className={` py-2  rounded-md ${position === 'bottom' ? 'rounded-tl-none' : 'rounded-bl-none'} shadow-lg w-56 bg-base-200`}>
+            <div className={` py-2  rounded-md ${position === 'bottom' ? 'rounded-tl-none' : 'rounded-bl-none '} shadow-lg w-56 bg-base-200`}>
               <ul className="menu  w-full rounded-box">
                 <li onClick={() => dispatch(toggleConversationMenu({ id: 0 }))}>
                   <button>

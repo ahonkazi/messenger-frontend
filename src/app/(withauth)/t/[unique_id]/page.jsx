@@ -5,7 +5,7 @@ import { DisplayMessage } from './_components/DisplayMessages/DisplayMessage'
 
 const MessagePage = () => {
     return (
-        <section data-theme='dark' className='h-screen border-l  flex flex-col border-base-100 bg-base-300 '>
+        <section  className='h-screen border-l  flex flex-col border-base-200 bg-base-300 '>
             <ChatHeader />
             <DisplayMessage />
             <ChatFooter />

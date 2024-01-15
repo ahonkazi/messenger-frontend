@@ -6,7 +6,7 @@
 }
 
 .btn-icon {
-    @apply w-10 h-10 hover:bg-base-100 hover:border-base-100;
+    @apply !w-10 !h-10 !min-h-10 !bg-base-100 !text-lg hover:!bg-base-200 !border-base-100;
 }
 
 .input-sm {
@@ -14,11 +14,11 @@
 }
 
 .conversation-item {
-    @apply duration-300 cursor-pointer hover:bg-opacity-50 px-4 py-3 hover:bg-base-200;
+    @apply duration-300 cursor-pointer hover:bg-opacity-85 px-4 py-3 hover:bg-base-100;
 }
 
 .conversation-item.active {
-    @apply bg-opacity-100 hover:bg-opacity-70 bg-base-200;
+    @apply bg-base-100;
 }
 
 .placeholder::before {
