@@ -11,7 +11,10 @@ const initialState = {
         status: false,
         id: 0,
         showButton: { status: false, id: 0 },
-    }
+    },
+    newChatSidebar: {
+        status: false
+    },
 
 }
 
@@ -76,10 +79,13 @@ const themeSlice = createSlice({
                 state.messageMenu.showButton.status = false;
                 state.messageMenu.showButton.id = 0;
             }
+        },
+        setNewChatSidebarStatus: (state, action) => {
+            state.newChatSidebar.status = action.payload
         }
 
     }
 })
 
 export default themeSlice.reducer
-export const { toggleConversationMenu, toggleMessageMenu, setShow } = themeSlice.actions
+export const { toggleConversationMenu, toggleMessageMenu, setShow, setNewChatSidebarStatus } = themeSlice.actions

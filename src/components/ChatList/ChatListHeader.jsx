@@ -1,7 +1,11 @@
+"use client"
 import React from 'react'
 import { RiChatNewFill } from "react-icons/ri";
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import { useDispatch } from 'react-redux';
+import { setNewChatSidebarStatus } from '@/redux/features/theme/ThemeSlice';
 const ChatListHeader = () => {
+    const dispatch = useDispatch()
     return (
         <div className="chatlist-header shrink-0">
             <div className="user__info h-[60px] container__area bg-base-100 justify-between flex items-center">
@@ -14,7 +18,7 @@ const ChatListHeader = () => {
                 </div>
                 <div className="flex items-center gap-x-1 ">
                     <div className="">
-                        <button className="btn  btn-icon btn-circle"><RiChatNewFill /></button>
+                        <button onClick={() => dispatch(setNewChatSidebarStatus(true))} className="btn  btn-icon btn-circle"><RiChatNewFill /></button>
                     </div>
                     <div className="">
                         <button className="btn  btn-icon btn-circle"><HiOutlineDotsVertical /></button>

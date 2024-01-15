@@ -12,7 +12,7 @@ const ChatWrapper = ({ children }) => {
                 </div>
             </div>
 
-            {/* <NewChatSidebar /> */}
+            <NewChatSidebar />
         </>
     )
 }
