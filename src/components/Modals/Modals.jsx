@@ -13,13 +13,13 @@ export const OutgoingRemoveMessageModal = ({ deleteModalStatus, setDeleteModalSt
                     <div className="">
                         <div className="form-control mt-2">
                             <label className="label flex justify-start gap-x-4 text-start cursor-pointer">
-                                <input type="radio" checked className="radio radio-sm radio-primary" />
+                                <input type="radio" checked readOnly className="radio radio-sm radio-primary" />
                                 <span className="label-text ">Unsent for everyone</span>
                             </label>
                         </div>
                         <div className="form-control">
                             <label className="label flex justify-start gap-x-4 text-start cursor-pointer">
-                                <input type="radio" checked={false} className="radio radio-sm radio-primary" />
+                                <input type="radio" readOnly checked={false} className="radio radio-sm radio-primary" />
                                 <span className="label-text ">Remove for you</span>
                             </label>
                         </div>
