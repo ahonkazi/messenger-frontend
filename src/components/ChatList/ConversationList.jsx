@@ -8,7 +8,7 @@ import Scrollbars from 'react-custom-scrollbars-2'
 const ConversationList = () => {
     const theme = useSelector(state => state.theme)
     const dispatch = useDispatch()
-   
+
     const handleScroll = () => {
         if (theme.conversationItem.status) {
             dispatch(toggleConversationMenu({ id: 0 }))
@@ -31,7 +31,7 @@ const ConversationList = () => {
 
                 {
                     [...new Array(18)].map((item, index) =>
-                        <ConversationItem id={index + 1} time={'Just now'} active={true} seen={true} message='You unsent a message' name='Ahon khan' />
+                        <ConversationItem key={index} id={index + 1} time={'Just now'} active={true} seen={true} message='You unsent a message' name='Ahon khan' />
 
                     )
                 }

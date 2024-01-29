@@ -31,7 +31,7 @@ const LoginForm = ({ setModalStatus }) => {
                     </div>
                     <div className="divider">OR</div>
                     <div className="form-control flex items-center gap-x-2 flex-row" >
-                        <span className="label-text">Don't have an account?</span>
+                        <span className="label-text">Don&apos;t have an account?</span>
                         <button type='button' onClick={() => setModalStatus(true)} className="label-text link link-hover">Signup</button>
 
                     </div>
