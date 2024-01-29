@@ -53,7 +53,7 @@ const ChatFooter = () => {
                         onInput={handleInput}
                         onKeyDown={handleKeyUp}
                         suppressContentEditableWarning
-                        className={`w-full h-full bg-transparent border-none outline-none`}
+                        className={`w-full h-full bg-transparent break-all border-none outline-none`}
                         role='textbox'
                     >
                     </div>
