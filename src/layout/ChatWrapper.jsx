@@ -7,7 +7,7 @@ const ChatWrapper = ({ children }) => {
         <>
             <div className='flex flex-row'>
                 <ChatList />
-                <div className="w-full h-screen">
+                <div className="w-full hidden lg:block h-screen">
                     {children}
                 </div>
             </div>
@@ -18,3 +18,29 @@ const ChatWrapper = ({ children }) => {
 }
 
 export default ChatWrapper
+
+export const ChatWrapperMessages = ({ children }) => {
+    return (
+        <>
+            <div className='hidden lg:block'>
+                <div className='flex flex-row'>
+                    <ChatList />
+                    <div className="w-full  h-screen">
+                        {children}
+                    </div>
+                </div>
+
+                <NewChatSidebar />
+            </div>
+            <div className='lg:hidden'>
+                <div className='flex flex-row'>
+                    <div className="w-full  h-screen">
+                        {children}
+                    </div>
+                </div>
+            </div>
+
+
+        </>
+    )
+}

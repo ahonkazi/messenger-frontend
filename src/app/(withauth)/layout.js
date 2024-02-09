@@ -2,11 +2,9 @@ import ChatWrapper from '@/layout/ChatWrapper'
 import React from 'react'
 
 const AuthLayout = ({ children }) => {
-    return (
-        <ChatWrapper>
-            {children}
-        </ChatWrapper>
-    )
+    return children
+
+
 }
 
 export default AuthLayout

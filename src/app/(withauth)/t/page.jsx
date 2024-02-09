@@ -1,8 +1,12 @@
+import StartChat from '@/components/Starter/StartChat'
+import ChatWrapper from '@/layout/ChatWrapper'
 import React from 'react'
 
 const page = () => {
     return (
-        <div className='h-screen bg-red-400'>page</div>
+        <ChatWrapper>
+            <StartChat />
+        </ChatWrapper>
     )
 }
 

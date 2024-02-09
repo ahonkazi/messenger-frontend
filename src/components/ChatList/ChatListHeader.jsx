@@ -2,8 +2,10 @@
 import React from 'react'
 import { RiChatNewFill } from "react-icons/ri";
 import { HiOutlineDotsVertical } from "react-icons/hi";
+import { AiOutlineLogin } from "react-icons/ai";
 import { useDispatch } from 'react-redux';
 import { setNewChatSidebarStatus } from '@/redux/features/theme/ThemeSlice';
+import Link from 'next/link';
 const ChatListHeader = () => {
     const dispatch = useDispatch()
     return (
@@ -22,6 +24,9 @@ const ChatListHeader = () => {
                     </div>
                     <div className="">
                         <button className="btn  btn-icon btn-circle"><HiOutlineDotsVertical /></button>
+                    </div>
+                    <div className="lg:hidden">
+                        <Link href={'/login'} className="btn  btn-icon btn-circle"><AiOutlineLogin /></Link>
                     </div>
                 </div>
             </div>

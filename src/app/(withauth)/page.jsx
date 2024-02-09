@@ -1,9 +1,12 @@
 import React from 'react'
 import HomePage from './_Home/HomePage'
+import ChatWrapper from '@/layout/ChatWrapper'
 
 const page = () => {
     return (
-        <HomePage />
+        <ChatWrapper>
+            <HomePage />
+        </ChatWrapper>
     )
 }
 

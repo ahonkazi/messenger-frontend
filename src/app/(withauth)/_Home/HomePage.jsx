@@ -1,8 +1,9 @@
+import StartChat from '@/components/Starter/StartChat'
 import React from 'react'
 
 const HomePage = () => {
     return (
-        <div >HomePage</div>
+        <StartChat />
     )
 }
 
